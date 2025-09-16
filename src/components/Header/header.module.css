@@ -1,0 +1,362 @@
+.header {
+  background-color: #1a1a1a;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  transition: height 0.3s ease, padding 0.3s ease;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.logoImg {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.logo h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ff9f43;
+  margin: 0;
+  transition: font-size 0.3s ease, color 0.2s ease;
+}
+
+.logo a {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  transition: transform 0.2s ease;
+}
+
+.logo a:hover {
+  transform: scale(1.03);
+}
+
+.desktopNav {
+  display: flex;
+}
+
+.navLinks {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 2rem;
+}
+
+.navLinks li {
+  margin: 0;
+  position: relative;
+}
+
+.navLinks a {
+  color: #e0e0e0;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease, transform 0.2s ease;
+  font-size: 1rem;
+  position: relative;
+}
+
+.navLinks a:hover {
+  color: #ff9f43;
+}
+
+.navLinks a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: #ff9f43;
+  transition: width 0.3s ease;
+}
+
+.navLinks a:hover::after {
+  width: 100%;
+}
+
+.loginButton, .logoutButton {
+  background-color: #ff9f43;
+  color: white !important;
+  padding: 0.6rem 1.2rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.loginButton:hover, .logoutButton:hover {
+  background-color: #f39c12;
+  transform: translateY(-2px);
+}
+
+.loginButton:active, .logoutButton:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para o menu mobile */
+.mobileMenuButton {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  position: relative;
+}
+
+.menuIcon, .closeIcon {
+  position: absolute;
+  width: 30px;
+  height: 3px;
+  background-color: #ff9f43;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.menuIcon::before, .menuIcon::after {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 3px;
+  background-color: #ff9f43;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.menuIcon::before {
+  transform: translateY(-10px);
+}
+
+.menuIcon::after {
+  transform: translateY(10px);
+}
+
+.closeIcon {
+  background-color: transparent;
+}
+
+.closeIcon::before {
+  transform: rotate(45deg);
+}
+
+.closeIcon::after {
+  transform: rotate(-45deg);
+}
+
+.mobileNav {
+  display: none;
+}
+
+/* Media queries para responsividade */
+@media (max-width: 1200px) {
+  .container {
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .container {
+    height: 70px;
+  }
+  
+  .navLinks {
+    gap: 1.2rem;
+  }
+  
+  .logo h1 {
+    font-size: 1.3rem;
+  }
+  
+  .logoImg {
+    width: 35px;
+    height: 35px;
+    margin-right: 8px;
+  }
+  
+  .loginButton, .logoutButton {
+    padding: 0.5rem 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    height: 70px;
+    padding: 0 1rem;
+  }
+  
+  .desktopNav {
+    display: none;
+  }
+
+  .mobileMenuButton {
+    display: block;
+  }
+
+  .mobileNav {
+    display: block;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: #1a1a1a;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    padding: 0.5rem 0;
+    z-index: 999;
+    transform-origin: top;
+    animation: slideDown 0.3s ease forwards;
+    max-height: calc(100vh - 70px);
+    overflow-y: auto;
+  }
+  
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-15px);
+      height: 0;
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+      height: auto;
+    }
+  }
+
+  .mobileNavLinks {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .mobileNavLinks li {
+    margin: 0;
+    padding: 0.9rem 0.5rem;
+    text-align: center;
+    border-bottom: 1px solid #333333;
+    position: relative;
+    transition: background-color 0.3s ease;
+  }
+  
+  .mobileNavLinks li:hover {
+    background-color: #252525;
+  }
+
+  .mobileNavLinks li:last-child {
+    border-bottom: none;
+  }
+
+  .mobileNavLinks a {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1rem;
+    display: block;
+    width: 100%;
+    transition: color 0.2s ease;
+  }
+  
+  .mobileNavLinks a:active {
+    color: #ff9f43;
+  }
+
+  .loginButtonMobile, .logoutButtonMobile {
+    background-color: #ff9f43;
+    color: white !important;
+    padding: 0.6rem 1rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+    margin: 0.5rem auto;
+    display: block;
+    width: 80%;
+    max-width: 200px;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .loginButtonMobile:hover, .logoutButtonMobile:hover {
+    background-color: #f39c12;
+  }
+  
+  .loginButtonMobile:active, .logoutButtonMobile:active {
+    transform: scale(0.98);
+  }
+}
+
+/* Media query para dispositivos muito pequenos */
+@media (max-width: 480px) {
+  .container {
+    height: 60px;
+    padding: 0 0.8rem;
+  }
+  
+  .logo h1 {
+    font-size: 1.2rem;
+  }
+  
+  .logoImg {
+    width: 30px;
+    height: 30px;
+    margin-right: 6px;
+  }
+  
+  .mobileNav {
+    top: 60px;
+  }
+  
+  .mobileNavLinks a {
+    font-size: 1rem;
+  }
+  
+  .mobileNavLinks li {
+    padding: 0.7rem;
+  }
+  
+  .mobileMenuButton {
+    width: 25px;
+    height: 25px;
+  }
+  
+  .menuIcon, .closeIcon, .menuIcon::before, .menuIcon::after {
+    width: 25px;
+    height: 2px;
+  }
+  
+  .mobileNavLinks {
+    max-height: 70vh;
+    overflow-y: auto;
+  }
+}

@@ -1,0 +1,133 @@
+.authContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 70vh;
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.authCard {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.authTabs {
+  display: flex;
+  border-bottom: 1px solid #eee;
+}
+
+.tabButton {
+  flex: 1;
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #666;
+}
+
+.activeTab {
+  color: #ff9f43;
+  border-bottom: 3px solid #ff9f43;
+  font-weight: 600;
+}
+
+.authForm {
+  padding: 2rem;
+}
+
+.loginContainer, .registerContainer {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.subtitle {
+  color: #666;
+  margin-bottom: 2rem;
+  font-size: 0.95rem;
+}
+
+.authInfo {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.authInfo h2 {
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.authInfo p {
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.authInfo ul {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 2rem;
+}
+
+.authInfo li {
+  padding-left: 1.5rem;
+  position: relative;
+  margin-bottom: 0.75rem;
+  line-height: 1.4;
+}
+
+.authInfo li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #ff9f43;
+  font-weight: bold;
+}
+
+.authBackButton {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.backToHome {
+  padding: 0.75rem 1.5rem;
+  background-color: transparent;
+  border: 1px solid #ff9f43;
+  color: #ff9f43;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.backToHome:hover {
+  background-color: #ff9f43;
+  color: white;
+}
+
+/* Responsividade */
+@media (min-width: 768px) {
+  .authContainer {
+    flex-direction: row;
+    gap: 2rem;
+    align-items: stretch;
+  }
+  
+  .authCard {
+    flex: 1;
+    margin-bottom: 0;
+  }
+  
+  .authInfo {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+}

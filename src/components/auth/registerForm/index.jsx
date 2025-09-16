@@ -2,7 +2,7 @@
 // components/auth/RegisterForm.jsx
 
 import { useState } from "react";
-import { useAuth } from "@/app/context/AuthContext";
+import { useAuth } from "../../../app/context/AuthContext";
 import styles from "./register.module.css";
 
 const RegisterForm = ({ onSuccess }) => {

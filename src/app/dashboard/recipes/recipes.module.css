@@ -1,0 +1,252 @@
+.recipeManagementContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.header {
+  margin-bottom: 30px;
+}
+
+.header h1 {
+  font-size: 2rem;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.header p {
+  color: #777;
+}
+
+.actionBar {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+.searchInput {
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 16px;
+  width: 300px;
+}
+
+.addButton {
+  background-color: #ff6b6b;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.addButton:hover {
+  background-color: #ff5252;
+}
+
+.recipeTable {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.recipeTable table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 16px;
+}
+
+.recipeTable th {
+  text-align: left;
+  padding: 15px;
+  background-color: #f5f5f5;
+  border-bottom: 2px solid #e0e0e0;
+  color: #333;
+}
+
+.recipeTable td {
+  padding: 15px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+}
+
+.viewButton,
+.editButton,
+.deleteButton {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.viewButton {
+  background-color: #e8f4ff;
+  color: #4a90e2;
+}
+
+.viewButton:hover {
+  background-color: #d0e8ff;
+}
+
+.editButton {
+  background-color: #f0e8ff;
+  color: #9c6ade;
+}
+
+.editButton:hover {
+  background-color: #e5d5f9;
+}
+
+.deleteButton {
+  background-color: #ffe8e8;
+  color: #ff6b6b;
+}
+
+.deleteButton:hover {
+  background-color: #ffd5d5;
+}
+
+.loadingContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+}
+
+.loadingSpinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(255, 107, 107, 0.2);
+  border-radius: 50%;
+  border-top-color: #ff6b6b;
+  animation: spin 0.8s linear infinite;
+  margin-bottom: 15px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.errorMessage {
+  background-color: #fff3f3;
+  border-left: 4px solid #ff6b6b;
+  padding: 15px;
+  margin-bottom: 25px;
+  border-radius: 4px;
+}
+
+.retryButton {
+  background-color: transparent;
+  color: #ff6b6b;
+  border: 1px solid #ff6b6b;
+  padding: 8px 15px;
+  margin-top: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.retryButton:hover {
+  background-color: #fff0f0;
+}
+
+.emptyState {
+  text-align: center;
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  margin: 20px 0;
+}
+
+.emptyState h2 {
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.emptyState p {
+  margin-bottom: 20px;
+  color: #777;
+}
+
+.addButtonEmpty {
+  background-color: #ff6b6b;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.addButtonEmpty:hover {
+  background-color: #ff5252;
+}
+
+.deleteModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.deleteModalContent {
+  background-color: white;
+  padding: 30px;
+  border-radius: 8px;
+  max-width: 500px;
+  width: 90%;
+}
+
+.deleteModalContent h2 {
+  margin-top: 0;
+  color: #ff6b6b;
+}
+
+.deleteModalActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.cancelButton {
+  background-color: #f0f0f0;
+  color: #333;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.cancelButton:hover {
+  background-color: #e0e0e0;
+}
+
+.confirmDeleteButton {
+  background-color: #ff6b6b;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.confirmDeleteButton:hover {
+  background-color: #ff5252;
+}

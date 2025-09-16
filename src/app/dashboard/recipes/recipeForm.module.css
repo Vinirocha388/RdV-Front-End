@@ -1,0 +1,200 @@
+.recipeFormContainer {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.header {
+  margin-bottom: 30px;
+}
+
+.header h1 {
+  font-size: 2rem;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.header p {
+  color: #777;
+}
+
+.recipeForm {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.formGroup {
+  margin-bottom: 25px;
+}
+
+.formRow {
+  display: flex;
+  gap: 20px;
+}
+
+.formRow .formGroup {
+  flex: 1;
+}
+
+.formGroup label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #333;
+}
+
+.formGroup input,
+.formGroup select,
+.formGroup textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 16px;
+  font-family: inherit;
+}
+
+.formGroup textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.formGroup select {
+  height: 48px;
+}
+
+.helpText {
+  display: block;
+  margin-top: 5px;
+  font-size: 0.85rem;
+  color: #777;
+}
+
+.ingredientRow,
+.instructionRow {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+  align-items: center;
+}
+
+.ingredientRow input {
+  flex: 1;
+}
+
+.instructionRow {
+  align-items: flex-start;
+}
+
+.instructionRow textarea {
+  flex: 1;
+  min-height: 60px;
+}
+
+.instructionNumber {
+  background-color: #ff6b6b;
+  color: white;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  flex-shrink: 0;
+  margin-top: 10px;
+}
+
+.addButton,
+.removeButton {
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: none;
+}
+
+.addButton {
+  background-color: #e8f4ff;
+  color: #4a90e2;
+  margin-top: 5px;
+}
+
+.addButton:hover {
+  background-color: #d0e8ff;
+}
+
+.removeButton {
+  background-color: #ffe8e8;
+  color: #ff6b6b;
+  height: 44px;
+}
+
+.removeButton:hover:not(:disabled) {
+  background-color: #ffd5d5;
+}
+
+.removeButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.formActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.cancelButton,
+.submitButton {
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: none;
+}
+
+.cancelButton {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.cancelButton:hover:not(:disabled) {
+  background-color: #e0e0e0;
+}
+
+.submitButton {
+  background-color: #ff6b6b;
+  color: white;
+}
+
+.submitButton:hover:not(:disabled) {
+  background-color: #ff5252;
+}
+
+.cancelButton:disabled,
+.submitButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.errorMessage {
+  background-color: #fff3f3;
+  border-left: 4px solid #ff6b6b;
+  padding: 15px;
+  margin-bottom: 25px;
+  border-radius: 4px;
+  color: #d43939;
+}
+
+@media (max-width: 768px) {
+  .formRow {
+    flex-direction: column;
+    gap: 15px;
+  }
+}

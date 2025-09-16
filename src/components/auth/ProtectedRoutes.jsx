@@ -1,20 +1,27 @@
 "use client";
 
 import { useEffect } from "react";
-import { useRouter } from "next/navigation";
-import { useAuth } from "@/app/context/AuthContext";
+import { useRouter, usePathname } from "next/navigation";
+import { useAuth } from "../../app/context/AuthContext";
 
 // Componente para proteger rotas que exigem autenticação
 export default function ProtectedRoutes({ children }) {
   const { user, loading } = useAuth();
   const router = useRouter();
+  const pathname = usePathname();
 
   useEffect(() => {
     // Se não estiver carregando e não houver usuário, redirecionar para login
     if (!loading && !user) {
-      router.push("/");
+      // Se estiver tentando acessar uma rota relacionada a receitas na área de admin
+      if (pathname.includes('/dashboard/recipes')) {
+        // Informar ao usuário que pode ver receitas sem login, mas precisa se autenticar para gerenciá-las
+        router.push("/recipes?authRequired=true");
+      } else {
+        router.push("/");
+      }
     }
-  }, [user, loading, router]);
+  }, [user, loading, router, pathname]);
 
   // Enquanto carrega, exibe um indicador de carregamento
   if (loading) {

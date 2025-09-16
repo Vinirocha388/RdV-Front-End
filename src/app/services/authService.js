@@ -1,7 +1,8 @@
 import axios from "axios";
 
 // URL base da API
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:4001";
+const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:4000";
+console.log("Conectando à API em:", API_URL);
  
 // Cliente axios com URL base configurada
 const apiClient = axios.create({
